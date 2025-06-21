@@ -1,4 +1,4 @@
-## Anomaly Detection with Rolling Z-Score (Time Series Data)
+## Anomaly Detection with Trend-Based Linear Regression (Time Series Data)
 
 #### Objective
 Develop a robust anomaly detection system that:
@@ -15,15 +15,12 @@ Develop a robust anomaly detection system that:
 
 #### Implementation Details/Flow
 1. **Data Load and cleanup**
-2. **Baseline Calculation**: Compute 7-day rolling mean/std with 5-period warmup, Fallback to expanding stats for initial periods
-3. **Anomaly Scoring**: 
-    - Calculate Z-scores: (current - mean) / std
-    - Flag points where |Z-score| > 2.5
-4. **Trend Validation**:
-    - Compare with prior window's slope
-    - Confirm anomalies break established patterns
-5. **Visualization**: Generate time series plot with anomalies highlighted
-6. **New Data Evaluation**: Recalculate window stats, Compute Z-score, Return boolean flag
+2. **Trend Modeling**: Fit linear regression to 7-day rolling window to compute expected value
+3. **Anomaly Scoring**: Calculate deviation score: |actual - expected| / standard deviation
+4. **Anomaly Flagging**: Flag anomalies if deviation score > 3.0
+5. **New Data Check**: Validate new data by computing deviation score against recent trend
+6. **Visualization**: Plot time series with actual values, trend, and anomaly markers in Jupyter
+7. **Reporting**: Report anomalies in last 7 days and latest value status
 
 
 #### Files included
