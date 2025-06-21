@@ -24,3 +24,9 @@ Develop a robust anomaly detection system that:
     - Confirm anomalies break established patterns
 5. **Visualization**: Generate time series plot with anomalies highlighted
 6. **New Data Evaluation**: Recalculate window stats, Compute Z-score, Return boolean flag
+
+
+#### Files included
+- Jupyter notebook (statistical_anomaly_detection.ipynb) - Jupyter notebook for interactive code evaluation
+- Sample input CSVs (trends2.csv and trends3.csv)
+- Unit test cases (test_anomaly_detection.py) - Test cases for original python script evaluation and validation.
